@@ -1,0 +1,55 @@
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <br>
+            <br>
+            <h1 class="header center white-text">Article Scraper</h1>
+            <div class="row center">
+                <h5 class="header col s12 grey-text text-lighten-1">Your saved articles</h5>
+            </div>
+            <div class="row center">
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <div class="parallax">
+        <img id="globe" src="/img/background1.jpg">
+    </div>
+</div>
+
+<div class="col s12">
+    {{#if article}} {{#each article}}
+    <h3 class="header">{{this.title}}</h3>
+    <div class="card-panel hoverable">
+        <div class="card-content">
+            <p></p>
+            <br>
+            <br>
+            <button type='button' class="btn-large waves-effect waves-light green modal-trigger" href='modal{{this._id}}'>Save a note</button>
+            <button type='button' class="btn-large waves-effect waves-light red delete" data-id='{{this._id}}'>Delete</button>
+        </div>
+        <div class="card-action">
+            <a href={{this.link}} target='_blank'>{{this.link}} </a>
+        </div>
+    </div>
+    {{/each}} {{else}}
+    <div class="card-panel">
+        <div class="card-content">
+            <h4>You have no saved articles.</h4>
+        </div>
+    </div>
+    {{/if}}
+</div>
+
+{{!-- Note Modal --}}
+
+<div id="modal{{this._id}}" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>

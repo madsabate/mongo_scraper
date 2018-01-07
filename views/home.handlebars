@@ -1,0 +1,43 @@
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <br>
+            <br>
+            <h1 class="header center white-text">Article Scraper</h1>
+            <div class="row center">
+                <h5 class="header col s12 grey-text text-lighten-1">Click the button to retrieve articles from echojs.com</h5>
+            </div>
+            <div class="row center">
+                <button type="button" class="btn-large waves-effect waves-light light-blue darken-4 scrape">Get Started</button>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <div class="parallax">
+        <img id="globe" src="/img/background1.jpg">
+    </div>
+</div>
+
+<div class="col s12">
+    {{#if article}} {{#each article}}
+    <h4 class="header">{{this.title}}</h4>
+    <div class="card-panel hoverable">
+        <div class="card-content">
+            <p></p>
+            <br>
+            <br>
+            <button type="button" class="btn-large waves-effect waves-light light-blue darken-4 save" data-id={{this._id}}> Save Article</button>
+        </div>
+        <div class="card-action">
+            <a href={{this.link}} target='_blank'>{{this.link}} </a>
+        </div>
+    </div>
+    {{/each}} {{else}}
+    <div class="card-panel">
+        <div class="card-content">
+            <h4>No articles to scrape, try again tomorrow!</h4>
+        </div>
+    </div>
+    {{/if}}
+</div>

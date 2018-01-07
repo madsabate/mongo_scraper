@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Mongoose
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/mongo_scraper");
+mongoose.connect("mongodb://heroku_s3lcjgc6:bn6arcfla7q6g9bm03lmf16he2@ds239557.mlab.com:39557/heroku_s3lcjgc6");
 console.log(mongoose.connection.readyState);
 
 // Routes

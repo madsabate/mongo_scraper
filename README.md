@@ -1,2 +1,2 @@
 # mongo_scraper
-This app scrapes articles from Techcrunch
+This app uses cheerio scrapes articles from echojs.com
